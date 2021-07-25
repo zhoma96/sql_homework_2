@@ -1,0 +1,113 @@
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysqldump -u root -p shop > shop.sql
+Enter password: ***********
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>dir
+ Том в устройстве C имеет метку OS
+ Серийный номер тома: FC3B-C040
+
+ Содержимое папки C:\Program Files\MySQL\MySQL Server 8.0\bin
+
+25.07.2021  23:40    <DIR>          .
+25.07.2021  23:40    <DIR>          ..
+25.07.2021  22:17                39 .my.cnf.sql
+23.04.2021  15:54           679 424 harness-library.dll
+23.04.2021  09:16         6 382 312 ibd2sdi.exe
+23.04.2021  09:16         6 369 520 innochecksum.exe
+25.03.2021  15:08         2 863 616 libcrypto-1_1-x64.dll
+21.04.2021  11:55         1 839 616 libmecab.dll
+23.04.2021  15:40         5 856 768 libprotobuf-debug.dll
+23.04.2021  15:39         1 161 728 libprotobuf-lite-debug.dll
+23.04.2021  15:53           554 496 libprotobuf-lite.dll
+23.04.2021  15:53           898 420 libprotobuf-lite.lib
+23.04.2021  15:53         2 835 968 libprotobuf.dll
+23.04.2021  15:53         4 179 030 libprotobuf.lib
+25.03.2021  15:08           686 080 libssl-1_1-x64.dll
+23.04.2021  09:16         6 312 696 lz4_decompress.exe
+23.04.2021  09:16         6 637 288 myisamchk.exe
+23.04.2021  09:16         6 481 128 myisamlog.exe
+23.04.2021  09:16         6 535 408 myisampack.exe
+23.04.2021  09:16         6 512 880 myisam_ftdump.exe
+23.04.2021  09:16         6 958 816 mysql.exe
+23.04.2021  09:16         6 853 872 mysqladmin.exe
+23.04.2021  09:16         7 165 168 mysqlbinlog.exe
+23.04.2021  09:16         6 857 960 mysqlcheck.exe
+23.04.2021  09:16        50 787 048 mysqld.exe
+23.04.2021  09:16         6 921 448 mysqldump.exe
+23.04.2021  15:38             7 881 mysqldumpslow.pl
+23.04.2021  15:38            28 776 mysqld_multi.pl
+23.04.2021  09:16            34 040 mysqlharness_stdx.dll
+23.04.2021  09:16            62 200 mysqlharness_tls.dll
+23.04.2021  09:16         6 846 704 mysqlimport.exe
+23.04.2021  09:16         7 310 056 mysqlpump.exe
+23.04.2021  09:16         7 488 240 mysqlrouter.exe
+23.04.2021  09:16           246 520 mysqlrouter_http.dll
+23.04.2021  09:16           101 648 mysqlrouter_http_auth_backend.dll
+23.04.2021  09:16            31 504 mysqlrouter_http_auth_realm.dll
+23.04.2021  09:16            72 456 mysqlrouter_io_component.dll
+23.04.2021  09:16         7 539 456 mysqlrouter_keyring.exe
+23.04.2021  09:16         7 513 344 mysqlrouter_passwd.exe
+23.04.2021  09:16         6 236 424 mysqlrouter_plugin_info.exe
+23.04.2021  09:16         6 844 648 mysqlshow.exe
+23.04.2021  09:16         6 862 568 mysqlslap.exe
+23.04.2021  09:16         6 269 184 mysql_config_editor.exe
+23.04.2021  09:16         6 937 344 mysql_migrate_keyring.exe
+23.04.2021  09:16         6 843 144 mysql_secure_installation.exe
+23.04.2021  09:16         6 294 272 mysql_ssl_rsa_setup.exe
+23.04.2021  09:16         6 208 768 mysql_tzinfo_to_sql.exe
+23.04.2021  09:16         6 932 208 mysql_upgrade.exe
+23.04.2021  09:16         6 254 328 my_print_defaults.exe
+23.04.2021  09:16         7 046 376 perror.exe
+25.07.2021  23:40             1 275 shop.sql
+25.07.2021  23:35               793 show_dump.sql
+23.04.2021  09:17         6 229 752 zlib_decompress.exe
+              51 файлов    268 574 638 байт
+               2 папок  39 191 306 240 байт свободно
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 36
+Server version: 8.0.25 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database sample;
+Query OK, 1 row affected (0.05 sec)
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p sample < shop.sql
+Enter password: ***********
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 39
+Server version: 8.0.25 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| new_schema         |
+| performance_schema |
+| sample             |
+| shop               |
+| sys                |
++--------------------+
+7 rows in set (0.00 sec)
